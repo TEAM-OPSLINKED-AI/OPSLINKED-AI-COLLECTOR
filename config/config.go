@@ -20,7 +20,7 @@ type AppConfig struct {
 // 다른 패키지에서 이 변수를 통해 설정 값에 접근할 수 있습니다.
 var Cfg AppConfig
 
-// Load 함수는 .env 파일이나 운영체제(OS)의 환경 변수에서 설정을 읽어와
+// Load 함수는 .env 파일이나 운영체제의 환경 변수에서 설정을 읽어와
 // 전역 변수인 Cfg를 초기화합니다.
 func Load() {
 	// godotenv.Load() 함수는 현재 디렉터리에서 .env 파일을 찾아 그 안의 변수들을

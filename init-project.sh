@@ -27,11 +27,10 @@ go build -ldflags="-extldflags=-lssp" -o metric-producer
 # main.go 실행
 go run -ldflags="-extldflags=-lssp" main.go
 
-# Spring Actuator Topic 소비 예시
-# --property print.key=true 옵션으로 메시지 Key도 함께 확인
-bin/kafka-console-consumer.sh \
-  --bootstrap-server _:9095 \
-  --topic spring-actuator-metrics \
-  --from-beginning \
-  --property print.key=true \
-  --property key.separator=" | "
+docker login
+
+# Docker 이미지 빌드
+docker build -t judemin/go-metric-producer:1.0 .
+
+# Docker 이미지 Push
+docker push judemin/go-metric-producer:1.0
